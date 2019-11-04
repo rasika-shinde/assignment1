@@ -5,10 +5,10 @@ sap.ui.define([
 
 	return Controller.extend("selFragment.selectDialog.controller.View1", {
 		onValuehelp : function (oEvent) {
-			var id = oEvent.getParameters().id.split('--')[2];
+			var id = oEvent.getParameters().id.split('---')[2];
 			var oDialog=  new sap.ui.xmlfragment("selFragment.selectDialog.fragments.selectDialog",this);
 			this.getView().addDependent(oDialog);
-			if(id == "input1"){
+			if(id === "input1"){
 				oDialog.bindAggregation("items",{
 				path : "city>/city",
 				template : new sap.m.StandardListItem({
@@ -24,9 +24,14 @@ sap.ui.define([
 				})
 			});	
 			}
-			
 			//change1
 			oDialog.open();
+		},
+		//test1
+		onValueHelpOkPress: function (oEvent) {
+		var Otitle = oEvent.getParameter("selectedItem").getTitle();
+		this._oInput = this.getView().byId("input1");
+	     this._oInput.setValue(Otitle);
 		}
 	});
 });

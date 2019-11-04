@@ -1,3 +1,8 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
-	<SelectDialog></SelectDialog>
+	<SelectDialog
+		title = "Select Country"
+		search = "handleSearch"
+		confirm = "onValueHelpOkPress"
+		cancel = "handleClose">
+	</SelectDialog>
      </core:FragmentDefinition>
