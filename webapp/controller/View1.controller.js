@@ -24,7 +24,7 @@ sap.ui.define([
 				})
 			});	
 			}
-			//change1
+			//change2
 			oDialog.open();
 		},
 		//test1
